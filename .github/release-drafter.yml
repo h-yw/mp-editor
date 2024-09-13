@@ -69,5 +69,3 @@ template: |
   ## 变更内容
 
   $CHANGES
-
-  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
