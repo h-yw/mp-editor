@@ -3,54 +3,107 @@ tag-template: "v$NEXT_PATCH_VERSION"
 categories:
   - title: "🚀 新功能"
     labels:
-      - "feature"
-      - "enhancement"
+      - 'feat'
+      - 'feature'
+      - 'enhancement'
   - title: "🐛 修复"
     labels:
       - "bug"
       - "fix"
       - "bugfix"
-  - title: "🧰 维护"
+  - title: '📚 文档更新'
+    labels:
+      - 'docs'
+  - title: '🎨 代码样式'
+    labels:
+      - 'style'
+  - title: '🔄 代码重构'
+    labels:
+      - 'refactor'
+  - title: '⚡ 性能优化'
+    labels:
+      - 'perf'
+  - title: '🧪 测试'
+    labels:
+      - 'test'
+  - title: "🧰 维护和工具"
     labels:
       - "chore"
       - "maintenance"
-change-template: "* $TITLE"
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\[`*_{}'
 version-resolver:
   major:
     labels:
       - "major"
+      - 'breaking-change'
   minor:
     labels:
       - "minor"
+      - 'feat'
   patch:
     labels:
       - "patch"
+      - 'fix'
+
   default: patch
+
 header: |
-  🎉 此版本包含以下新功能和修复：
+  # 🎉 新版本发布
+
+  很高兴向您介绍此版本中的更新内容。感谢您一如既往的支持！
+  如果您对本次更新有任何问题，或希望提供反馈， 请在[GitHub Issues](https://github.com/h-yw/mp-editor/issues) 中提交问题。
+
+  ---
+footer: |
+  ---
+  ## ❓ 常见问题
+
+  如果您在使用过程中遇到问题，请参考以下资源：
+  
+  - [提交 Issue](https://github.com/h-yw/mp-editor/issues)
+
+  再次感谢您对我们项目的支持！
 
 template: |
   ## 变更内容
 
-  $CHANGES
+  {{#changes({{categoryTitle: '🚀 新功能'}})}}
+  ### 🚀 新功能
+  $CHANGES({{categoryTitle: '🚀 新功能'}})
+  {{/changes}}
 
-  ## 如何更新
+  {{#changes({{categoryTitle: '🐛 修复'}})}}
+  ### 🐛 修复
+  $CHANGES({{categoryTitle: '🐛 修复'}})
+  {{/changes}}
 
-  请按照以下步骤更新到此版本：
-  1. 确保您的代码已经同步到最新的主分支。
+  {{#changes({{categoryTitle: '📚 文档更新'}})}}
+  ### 📚 文档更新
+  $CHANGES({{categoryTitle: '📚 文档更新'}})
+  {{/changes}}
 
-  2. 运行以下命令来拉取最新的版本：
+  {{#changes({{categoryTitle: '🎨 代码样式'}})}}
+  ### 🎨 代码样式
+  $CHANGES({{categoryTitle: '🎨 代码样式'}})
+  {{/changes}}
 
-    ```
-    git pull origin main
-    ```
+  {{#changes({{categoryTitle: '🔄 代码重构'}})}}
+  ### 🔄 代码重构
+  $CHANGES({{categoryTitle: '🔄 代码重构'}})
+  {{/changes}}
 
-  3. 检查变更日志以了解重要更新：
+  {{#changes({{categoryTitle: '⚡ 性能优化'}})}}
+  ### ⚡ 性能优化
+  $CHANGES({{categoryTitle: '⚡ 性能优化'}})
+  {{/changes}}
 
-    - 新功能可能需要配置调整或代码适配。
-    - 修复可能涉及错误处理逻辑的调整。
+  {{#changes({{categoryTitle: '🧪 测试'}})}}
+  ### 🧪 测试
+  $CHANGES({{categoryTitle: '🧪 测试'}})
+  {{/changes}}
 
-  ## 反馈与支持
-
-  如果您在更新过程中遇到任何问题，或者对本版本有任何建议，请提交 Issue 或联系项目维护者。
+  {{#changes({{categoryTitle: '🧰 维护和工具'}})}}
+  ### 🧰 维护和工具
+  $CHANGES({{categoryTitle: '🧰 维护和工具'}})
+  {{/changes}}
