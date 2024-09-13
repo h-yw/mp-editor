@@ -67,12 +67,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
-      # - name: Upload ZIP to Draft Release
-      #   uses: actions/upload-release-asset@v1
-      #   # env:
-      #   #   GITHUB_TOKEN:
-      #   with:
-      #     upload_url:
-      #     asset_path: ./build.zip
-      #     asset_name: build.zip
-      #     asset_content_type: application/zip
+      - name: Upload ZIP to Draft Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.draft-release.outputs.upload_url }}
+          asset_path: mp-editor.zip
+          asset_name:  mp-editor-zip
+          asset_content_type: application/zip
