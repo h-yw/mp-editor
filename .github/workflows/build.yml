@@ -68,8 +68,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
-      - name: test
-        run: echo ${{steps.draft_release.outputs.upload_url}}
+      # - name: test
+      #   run: echo ${{steps.draft_release.outputs.upload_url}}
         
       # - name: Create or Update Draft Release
       #   id: create_release
@@ -88,7 +88,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.draft-release.outputs.upload_url }}
+          upload_url: ${{ steps.draft_release.outputs.upload_url }}
           asset_path: mp-editor.zip
           asset_name:  mp-editor
           asset_content_type: application/zip
