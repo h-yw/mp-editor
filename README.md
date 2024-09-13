@@ -132,5 +132,5 @@ side-panel.html: Uncaught (in promise) Error: Could not establish connection. Re
 * [react](https://reactjs.org/) 
 * [tailwindcss](https://tailwindcss.com/)
 * [markdown-it](https://github.com/markdown-it/markdown-it) 
-* [shiki](https://github.com/shikijs/shiki)
+* 代码高亮 [shiki](https://github.com/shikijs/shiki)
 * [monaco-editor](https://github.com/microsoft/monaco-editor)

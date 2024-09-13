@@ -5,7 +5,7 @@ name: mp editor ci
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     tags:
       - "v*.*.*"
 
@@ -15,59 +15,59 @@ jobs:
     permissions: write-all
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: enable corepack
-      run: corepack enable
-      
-    - name: set node V20.15.1
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.15.1
-        cache: yarn
+      - name: enable corepack
+        run: corepack enable
 
-    - name:  Install latest yarn
-      run: corepack prepare yarn@stable --activate
+      - name: set node V20.15.1
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.15.1
+          cache: yarn
 
-    - name: activate latest yarm
-      run: yarn set version stable
+      - name: Install latest yarn
+        run: corepack prepare yarn@stable --activate
 
-    - name: install dep
-      run: yarn install 
-      
-    - name: build production
-      run: yarn build
-      
-    - name: Zip build files
-      run: |
-        zip -r mp-editor.zip ./dist
+      - name: activate latest yarm
+        run: yarn set version stable
 
-    - name: Upload ZIP as artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: build-zip
-        path: build.zip
+      - name: install dep
+        run: yarn install
+
+      - name: build production
+        run: yarn build
+
+      - name: Zip build files
+        run: |
+          zip -r mp-editor.zip ./dist
+
+      - name: Upload ZIP as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-zip
+          path: build.zip
   draft-release:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Draft Release
-      uses: release-drafter/release-drafter@v6.0.0
-      with:
-        config-name: .github/release-drafter.yml
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Upload ZIP to Draft Release
-      uses: actions/upload-release-asset@v1
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.draft-release.outputs.upload_url }}
-        asset_path: ./build.zip
-        asset_name: build.zip
-        asset_content_type: application/zip
+      - name: Draft Release
+        uses: release-drafter/release-drafter@v6.0.0
+        with:
+          config-name: .github/release-drafter.yml
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Upload ZIP to Draft Release
+      #   uses: actions/upload-release-asset@v1
+      #   # env:
+      #   #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.draft-release.outputs.upload_url }}
+      #     asset_path: ./build.zip
+      #     asset_name: build.zip
+      #     asset_content_type: application/zip
