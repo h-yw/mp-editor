@@ -14,7 +14,7 @@ categories:
     labels:
       - "chore"
       - "maintenance"
-change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
+change-template: "* $TITLE"
 change-title-escapes: '\[`*_{}'
 version-resolver:
   major:
