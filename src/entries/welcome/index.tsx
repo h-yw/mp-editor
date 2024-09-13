@@ -6,9 +6,10 @@
  * @Description:
  */
 import { useEffect, useState } from "react";
-import { eventMap, getActiveTab, MessageType, appmsg } from "@config/event";
+import { eventMap, getActiveTab } from "@utils/index";
 import githubSvg from "@assets/github-mark-white.svg";
 import "../../style/index.css";
+import { appmsg, MessageType } from "@/types/mp";
 function Welcome() {
   const [canUse, setCanUse] = useState(false);
   const [tab, setTab] = useState<chrome.tabs.Tab>();

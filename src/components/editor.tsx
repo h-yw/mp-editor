@@ -2,21 +2,16 @@
  * @Author: h-yw 1327603193@qq.com
  * @Date: 2024-09-09 12:34:47
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-09-13 12:57:26
+ * @LastEditTime: 2024-09-13 15:26:03
  * @Description:
  */
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import MPEditor from "@/feature/monaco/editor";
-import {
-  eventMap,
-  getActiveTab,
-  isChromeExtension,
-  MessageType,
-} from "@config/event";
-import { ELanguage, EMode } from "../types/mp";
+
+import { ELanguage, EMode, MessageType } from "../types/mp";
 import Toolbar from "./toolbar";
 import FileManager from "@feature/storage";
-import { debounce } from "@/utils";
+import { debounce, eventMap, getActiveTab, isChromeExtension } from "@/utils";
 
 function Editor() {
   const [language, setLanguage] = useState(ELanguage.Markdown);
