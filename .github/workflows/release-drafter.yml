@@ -1,46 +1,56 @@
-name-template: 'v$NEXT_PATCH_VERSION 🌈'
-tag-template: 'v$NEXT_PATCH_VERSION'
+name-template: "v$NEXT_PATCH_VERSION 🌈"
+tag-template: "v$NEXT_PATCH_VERSION"
 categories:
-  - title: '🚀 Features'
+  - title: "🚀 新功能"
     labels:
-      - 'feature'
-      - 'enhancement'
-  - title: '🐛 Bug Fixes'
+      - "feature"
+      - "enhancement"
+  - title: "🐛 修复"
     labels:
-      - 'bug'
-      - 'fix'
-      - 'bugfix'
-  - title: '🧰 Maintenance'
+      - "bug"
+      - "fix"
+      - "bugfix"
+  - title: "🧰 维护"
     labels:
-      - 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+      - "chore"
+      - "maintenance"
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
 change-title-escapes: '\[`*_{}'
 version-resolver:
   major:
     labels:
-      - 'major'
+      - "major"
   minor:
     labels:
-      - 'minor'
+      - "minor"
   patch:
     labels:
-      - 'patch'
+      - "patch"
   default: patch
 header: |
-  🎉 This release adds the following features and fixes:
-  <!--
-  ## 🚀 Features
-
-  ## 🐛 Bug Fixes
-
-  ## 🧰 Maintenance
-  -->
+  🎉 此版本包含以下新功能和修复：
 
 template: |
-  ## What’s Changed
-
+  ## 变更内容
 
   $CHANGES
 
-  ## 🚀 Credits
-  $OWNER ($REPOSITORY)
+  ## 如何更新
+
+  请按照以下步骤更新到此版本：
+  1. 确保您的代码已经同步到最新的主分支。
+
+  2. 运行以下命令来拉取最新的版本：
+
+    ```
+    git pull origin main
+    ```
+
+  3. 检查变更日志以了解重要更新：
+
+    - 新功能可能需要配置调整或代码适配。
+    - 修复可能涉及错误处理逻辑的调整。
+
+  ## 反馈与支持
+
+  如果您在更新过程中遇到任何问题，或者对本版本有任何建议，请提交 Issue 或联系项目维护者。
