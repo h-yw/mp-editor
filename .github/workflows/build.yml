@@ -69,7 +69,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
       - name: test
-        run: echo ${{steps.draft_release.outputs}}
+        run: echo ${{steps.draft_release.outputs.upload_url}}
         
       # - name: Create or Update Draft Release
       #   id: create_release
