@@ -61,6 +61,7 @@ jobs:
           name: mp-editor
           
       - name: Draft Release
+        id: draft_release
         uses: release-drafter/release-drafter@v6.0.0
         with:
           config-name: workflows/release-drafter.yml
@@ -68,18 +69,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
       - name: test
-        run: echo ${{steps.draft-release.outputs.upload_url}}
+        run: echo ${{steps.draft_release.outputs}}
         
-      - name: Create or Update Draft Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        with:
-          draft: true  # 设置为true表示是一个草稿release
-          files: mp-editor.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: test
-        run: echo ${{steps.draft-release.outputs.upload_url}}
+      # - name: Create or Update Draft Release
+      #   id: create_release
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     draft: true  # 设置为true表示是一个草稿release
+      #     files: mp-editor.zip
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # - name: test
+      #   run: echo ${{steps.draft-release.outputs.upload_url}}
         
       - name: Upload ZIP to Draft Release
         uses: actions/upload-release-asset@v1
