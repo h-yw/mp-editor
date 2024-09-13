@@ -1,0 +1,17 @@
+name-template: 'v$NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\[`*_{}'
+template: |
+  ## What's Changed
+
+  $CHANGES
+
+  **Full Changelog**: https://github.com/$REPOSITORY/compare/$PREVIOUS_TAG...$NEW_TAG
