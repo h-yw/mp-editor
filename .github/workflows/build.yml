@@ -58,7 +58,7 @@ jobs:
       - name: Download Docker image tar file
         uses: actions/download-artifact@v3
         with:
-          name: build.zip
+          name: build-zip
 
       - name: Draft Release
         uses: release-drafter/release-drafter@v6.0.0
