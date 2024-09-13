@@ -47,3 +47,27 @@ jobs:
       with:
         name: build-zip
         path: build.zip
+  draft-release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Draft Release
+      uses: release-drafter/release-drafter@v6.0.0
+      with:
+        config-name: .github/release-drafter.yml
+      # env:
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Upload ZIP to Draft Release
+      uses: actions/upload-release-asset@v1
+      # env:
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.draft-release.outputs.upload_url }}
+        asset_path: ./build.zip
+        asset_name: build.zip
+        asset_content_type: application/zip
