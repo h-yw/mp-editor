@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "preinstall": "yarn dlx @yarnpkg/sdks vscode",
-    "watch": "chokidar 'src/**/*' -d 3000 -c 'yarn build'"
+    "watch": "chokidar 'src/**/*' -d 3000 -c 'yarn build'",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@shikijs/monaco": "^1.16.3",
@@ -31,6 +33,11 @@
     "shiki": "^1.16.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/cz-commitlint": "^19.5.0",
+    "@commitlint/format": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
     "@crxjs/vite-plugin": "^1.0.14",
     "@eslint/js": "^9.9.0",
     "@shikijs/markdown-it": "^1.16.2",
@@ -45,12 +52,15 @@
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "chrome-types": "^0.1.301",
+    "commitlint": "^19.5.0",
+    "cz-customizable": "^7.2.1",
     "esbuild": "^0.23.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "glob": "^11.0.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.6",
     "postcss": "^8.4.45",
     "sass": "^1.78.0",
     "tailwindcss": "^3.4.10",
