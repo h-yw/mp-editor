@@ -68,42 +68,6 @@ footer: |
 template: |
   ## 变更内容
 
-  {{#changes({{categoryTitle: '🚀 新功能'}})}}
-  ### 🚀 新功能
-  $CHANGES({{categoryTitle: '🚀 新功能'}})
-  {{/changes}}
+  $CHANGES
 
-  {{#changes({{categoryTitle: '🐛 修复'}})}}
-  ### 🐛 修复
-  $CHANGES({{categoryTitle: '🐛 修复'}})
-  {{/changes}}
-
-  {{#changes({{categoryTitle: '📚 文档更新'}})}}
-  ### 📚 文档更新
-  $CHANGES({{categoryTitle: '📚 文档更新'}})
-  {{/changes}}
-
-  {{#changes({{categoryTitle: '🎨 代码样式'}})}}
-  ### 🎨 代码样式
-  $CHANGES({{categoryTitle: '🎨 代码样式'}})
-  {{/changes}}
-
-  {{#changes({{categoryTitle: '🔄 代码重构'}})}}
-  ### 🔄 代码重构
-  $CHANGES({{categoryTitle: '🔄 代码重构'}})
-  {{/changes}}
-
-  {{#changes({{categoryTitle: '⚡ 性能优化'}})}}
-  ### ⚡ 性能优化
-  $CHANGES({{categoryTitle: '⚡ 性能优化'}})
-  {{/changes}}
-
-  {{#changes({{categoryTitle: '🧪 测试'}})}}
-  ### 🧪 测试
-  $CHANGES({{categoryTitle: '🧪 测试'}})
-  {{/changes}}
-
-  {{#changes({{categoryTitle: '🧰 维护和工具'}})}}
-  ### 🧰 维护和工具
-  $CHANGES({{categoryTitle: '🧰 维护和工具'}})
-  {{/changes}}
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
