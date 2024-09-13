@@ -17,10 +17,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: enable corepack
+      run: corepack enable
+      
     - name: set node V20.15.1
       uses: actions/setup-node@v4
       with:
         node-version: 20.15.1
+        cache: yarn
 
     - name:  Install latest yarn
       run: corepack prepare yarn@stable --activate
