@@ -7,10 +7,10 @@
     "description": "公众号markdown编辑器",
     "homepage_url": "https://github.com/h-yw/mp-editor",
     "icons": {
-        "16": "images/mp_gray_16.png",
-        "32": "images/mp_gray_32.png",
-        "48": "images/mp_gray_48.png",
-        "128": "images/mp_gray_128.png"
+        "16": "images/mp_16x16.png",
+        "32": "images/mp_32x32.png",
+        "48": "images/mp_48x48.png",
+        "128": "images/mp_128x128.png"
     },
     "action": {
         "default_popup": "html/welcome.html",
@@ -31,10 +31,7 @@
         }
     ],
     "side_panel": {
-        "default_path": "html/side-panel.html",
-        "options": {
-            "default_width": 500
-        }
+        "default_path": "html/side-panel.html"
     },
     "permissions": [
         "sidePanel",
