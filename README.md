@@ -17,6 +17,10 @@
 
 另外，样式使用也是一个问题。因为不可能使用样式类，只能使用行内的样式。因此，在 Markdown 转 HTML 时，需要将一个样式主题抽取为行内样式。当然，这也限制了一部分能力。还是那句话，不追求花里胡哨的话足够了，哈哈哈哈哈哈😂
 
+## 使用（使用Microsoft Edge） 
+1. 下载插件[mp-editor.zip](https://github.com/h-yw/mp-editor/releases)
+2. 将插件解压后，在 `chrome://extensions/` 页面中，启用开发者模式，选择加载已解压的扩展程序，选择插件解压后的目录即可。
+![使用方式](docs/preview/use.png)
 
 ## 调试&构建
 
@@ -58,11 +62,12 @@ yarn build
 
 ## 预览效果
 
+<div>
 <img width="300px" alt="预览1" src="docs/preview/1.png"/>
 <img width="300px" alt="预览2" src="docs/preview/2.png"/>
 <img width="300px" alt="预览3" src="docs/preview/3.png"/>
 <img width="300px" alt="预览4" src="docs/preview/4.png"/>
-
+</div>
 
 * 打开文件
 
@@ -132,5 +137,6 @@ side-panel.html: Uncaught (in promise) Error: Could not establish connection. Re
 * [react](https://reactjs.org/) 
 * [tailwindcss](https://tailwindcss.com/)
 * [markdown-it](https://github.com/markdown-it/markdown-it) 
-* 代码高亮 [shiki](https://github.com/shikijs/shiki)
+* [shiki](https://github.com/shikijs/shiki)
 * [monaco-editor](https://github.com/microsoft/monaco-editor)
+* [github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
