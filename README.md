@@ -76,7 +76,7 @@ yarn build
 <img width="300px" alt="预览-打开" src="docs/preview/open.png"/>
 
 * 保存为文件
-* 
+
 <img width="300px" alt="预览-打开" src="docs/preview/save.png"/>
 
 * 编辑模式
