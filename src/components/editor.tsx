@@ -2,7 +2,7 @@
  * @Author: h-yw 1327603193@qq.com
  * @Date: 2024-09-09 12:34:47
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-09-13 15:26:03
+ * @LastEditTime: 2024-09-14 12:22:32
  * @Description:
  */
 import { ChangeEvent, useEffect, useRef, useState } from "react";
@@ -77,7 +77,7 @@ function Editor() {
 
   useEffect(() => {
     if (!isChromeExtension) return;
-    const handler = ({ type, data }: { type: MessageType; data: string }) => {
+    const handler = ({ type }: { type: MessageType; data: string }) => {
       if (type === MessageType.GetOriginEditorVal) {
         // if (data) {
         //   editorRef.current?.setValue(data);
