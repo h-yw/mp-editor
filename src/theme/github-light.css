@@ -1,7 +1,7 @@
 /*
  * @Author: h-yw 1327603193@qq.com
  * @Date: 2024-09-10 12:48:17
- * @LastEditTime: 2024-09-12 13:35:41
+ * @LastEditTime: 2024-09-14 12:16:25
  * @Github: https://github.com/h-yw
  * @Blog: https://hlovez.life
  * @Description:  GitHub Markdown Light Theme
@@ -323,6 +323,7 @@
 .markdown-body p {
   margin-top: 0;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .markdown-body blockquote {
