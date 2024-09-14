@@ -79,17 +79,17 @@ function Editor() {
     if (!isChromeExtension) return;
     const handler = ({ type, data }: { type: MessageType; data: string }) => {
       if (type === MessageType.GetOriginEditorVal) {
-        if (data) {
-          editorRef.current?.setValue(data);
-        } else {
-          FileManager.getCache()
-            .then((res) => {
-              editorRef.current?.setValue(res?.data || "");
-            })
-            .catch((err) => {
-              console.log("获取缓存失败", err);
-            });
-        }
+        // if (data) {
+        //   editorRef.current?.setValue(data);
+        // }
+        // 不在从原编辑器获取内容，直接读缓存
+        FileManager.getCache()
+          .then((res) => {
+            editorRef.current?.setValue(res?.data || "");
+          })
+          .catch((err) => {
+            console.log("获取缓存失败", err);
+          });
       }
     };
     chrome.runtime.onMessage.addListener(handler);
