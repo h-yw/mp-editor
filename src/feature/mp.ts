@@ -2,7 +2,7 @@
  * @Author: h-yw 1327603193@qq.com
  * @Date: 2024-09-08 03:07:04
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-09-12 17:41:57
+ * @LastEditTime: 2024-12-01 13:35:51
  * @Description: 注入浏览器的方法，资源与插件内不共用，再次定义了MessageType枚举和appmsg
  */
 
@@ -29,10 +29,11 @@ export enum EMode {
   Edit = "edit",
 }
 
-const iframe = document.querySelector("iframe") as HTMLIFrameElement;
+const iframe = document.querySelector(".ProseMirror") as HTMLDivElement;
 
 const rich = getRichMedia();
 chrome.runtime.onMessage.addListener(({ type, data }) => {
+  console.log("mp contentscript", type, data);
   if (type === MessageType.SendMPEditorValue) {
     console.log("save======", data);
     rich.innerHTML = data.data;
@@ -62,6 +63,6 @@ chrome.runtime.onMessage.addListener(({ type, data }) => {
 });
 
 function getRichMedia() {
-  const rich = iframe?.contentDocument?.body as HTMLBodyElement;
+  const rich = iframe;
   return rich;
 }
